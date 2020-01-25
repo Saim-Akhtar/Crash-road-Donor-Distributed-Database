@@ -1,0 +1,56 @@
+<%- include('includes/head.ejs') %>    
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container my-5">
+        <h2>List of All cars</h2>
+
+        <div class="dropdown float-right">
+                <button class="btn btn-secondary dropdown-toggle"
+                        type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                  Add car
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <a class="dropdown-item" href="/cars/add/sync">Synchronous</a>
+                  <a class="dropdown-item" href="/cars/add/async">Asynchronous</a>
+                  <a class="dropdown-item" href="/cars/queued">Queued Data</a>
+                </div>
+              </div>
+
+        
+        <div class="clearfix"></div>
+        
+        <% if(carsList.length >0) { %>
+            <table class="table my-3">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                    <% for (let car of carsList) { %>
+                        <tr>
+                            
+                            <th scope="row"><%= car.id %></th>
+                            <td><%= car.name %></td>
+                            <td><%= car.model %></td>
+                            <td><%= car.year %></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                  </table>
+                  <% } else { %>
+                    <h1 class="text-warning text-center">No cars IN Database</h1>
+                    <% } %>
+
+    </div>
+
+
+
+</body>
+</html>

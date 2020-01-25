@@ -1,0 +1,44 @@
+<%- include('includes/head.ejs') %>    
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container my-5">
+        <h2>Donate for Peaceful Cause</h2>
+
+        <div class="container">
+            <form action="/donors/donate" method="POST">
+                <div class="form-group">
+                    <select class="custom-select" name="donor">
+                      <option selected disabled>Select Donor</option>
+                      <% for (let donor of donorsList) { %>
+                      <option value="<%= donor.id %>"><%= donor.name %></option>
+                      <% } %>
+                    </select>
+                  </div>
+                <div class="form-group">
+                    Select Victims: 
+                    <select class="selectpicker" multiple data-live-search="true" name="victim">
+                      <% for (let v of victimsList) { %>
+                      <option value="<%= v.id %>"><%= v.name %></option>
+                      <% } %>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="amount">Donation Amount (per person)</label>
+                    <input type="text" class="form-control" id="amount" name="amount" placeholder="">
+                  </div>
+                  <div class="custom-control custom-switch form-group">
+                    <input type="checkbox" name="async_mode" class="custom-control-input" data-toggle="toggle" id="updateSwitch">
+                    <label class="custom-control-label" for="updateSwitch">Asynchronous Mode</label>
+                  </div>
+                <button type="submit" class="btn btn-primary mb-2">Donate</button>
+
+              </form>
+              
+        </div>
+    </div>
+
+
+
+</body>
+</html>

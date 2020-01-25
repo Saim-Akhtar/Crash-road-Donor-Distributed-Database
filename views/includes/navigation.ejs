@@ -1,0 +1,34 @@
+<nav class="navbar font-weight-bold bg-warning navbar-expand-lg fixed-left navbar-light bg-primary">
+    <a class="navbar-brand" href="/cars">Showroom Raza</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item <%= path=='/incidents' ? 'active':'' %>">
+            <a class="nav-link" href="/incidents">Incidents</a>
+        </li>
+        <li class="nav-item <%= path=='/temp' ? 'active':'' %>">
+            <a class="nav-link" href="/donors/temp">temp Data</a>
+        </li>
+        <li class="nav-item <%= path=='/victims' ? 'active':'' %>">
+          <a class="nav-link" href="/victims">Victims</a>
+      </li>
+      <li class="nav-item <%= path=='/donors' ? 'active':'' %>">
+        <a class="nav-link" href="/donors">Donors</a>
+    </li>
+    <li class="nav-item <%= path=='/donate' ? 'active':'' %>">
+      <a class="nav-link" href="/donors/donate">Donate</a>
+  </li>
+  <li class="nav-item <%= path=='/donations' ? 'active':'' %>">
+    <a class="nav-link" href="/donors/donations">Donations</a>
+</li>
+        
+      </ul>
+      
+          
+      
+      
+    </div>
+  </nav>

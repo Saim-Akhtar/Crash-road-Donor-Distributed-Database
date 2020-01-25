@@ -1,0 +1,45 @@
+<%- include('includes/head.ejs') %>    
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container my-5">
+        <h2>List of All victims</h2>
+
+
+        <div class="clearfix"></div>
+        
+        <% if(victimsList.length >0) { %>
+            <table class="table my-3">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                    <% for (let victim of victimsList) { %>
+                        <tr>
+                            <th scope="row"><%= victim.id %></th>
+                            <td><%= victim.name %></td>
+                            <td>
+                              <form class="form-inline" action="/victims/delete/<%= victim.id %>" method="POST">
+                                <input type="text" class="sr-only" name="key" value="<%= victim.key%>">
+                                <button type="submit" class="btn bg-danger text-white">Delete</button>
+                              </form>
+                            </td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                  </table>
+                  <% } else { %>
+                    <h1 class="text-warning text-center">No victims IN Database</h1>
+                    <% } %>
+
+    </div>
+
+
+
+</body>
+</html>

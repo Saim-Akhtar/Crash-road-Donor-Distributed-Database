@@ -1,0 +1,33 @@
+<%- include('includes/head.ejs') %>    
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container my-5">
+        <h2>Add A car</h2>
+
+        <div class="container">
+            <form action="/cars/add/async" method="POST">
+                <div class="form-group">
+                    <label for="name">car name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="">
+                  </div>
+                <div class="form-group">
+                  <label for="model">car model</label>
+                  <input type="text" class="form-control" id="model" name="model" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="year">car year</label>
+                  <input type="text" class="form-control" id="year" name="year" placeholder="">
+                </div>
+                
+                <button type="submit" class="btn btn-primary mb-2">Insert ASynchonously</button>
+
+              </form>
+              
+        </div>
+    </div>
+
+
+
+</body>
+</html>
